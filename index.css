@@ -1,0 +1,504 @@
+/* ===== Базовый сброс ===== */
+* {
+    margin: 0;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+body, html {
+    overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a1a1a;
+    width: 100%;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== Стили для реальных фото (logo.png, black.png, white.png, 1/2/3.png, fb/tg/wt/wb.png) ===== */
+.real-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+.logo-img {
+    height: 80px;
+    width: auto;
+    max-width: 220px;
+    border-radius: 0;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+.soc-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ===== Утилиты показа/скрытия по устройству ===== */
+.mobile-only { display: none; }
+.desktop-only { display: flex; }
+
+/* ===== Плейсхолдеры для фото (замени на свои <img>) ===== */
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    background: repeating-linear-gradient(
+        45deg,
+        #c9c9c9,
+        #c9c9c9 10px,
+        #b5b5b5 10px,
+        #b5b5b5 20px
+    );
+    border: 2px dashed #8a8a8a;
+}
+.ph-black-desert  { background-color: #8a7560; }
+.ph-white-desert  { background-color: #b9c2c9; }
+.ph-day1, .ph-day2, .ph-day3 { background-color: #c9a87a; }
+
+.soc-placeholder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* ===== Хедер ===== */
+.head-wrap {
+    position: relative;
+}
+.head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 110px;
+    background-color: #FFE799;
+    padding: 15px 40px;
+    gap: 30px;
+}
+.logo-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.logo-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px dashed #8a8a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #8a8a8a;
+    flex-shrink: 0;
+}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+}
+.logo-line1 {
+    color: #2e9e4f;
+    font-weight: bold;
+    font-size: 20px;
+}
+.logo-line2 {
+    color: #e08a2b;
+    font-weight: bold;
+    font-size: 15px;
+}
+.logo-line3 {
+    color: #1a1a1a;
+    font-size: 11px;
+    font-style: italic;
+}
+.BW {
+    flex: 1;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 400;
+}
+.gradient {
+    height: 35px;
+    width: 100%;
+    background: linear-gradient(rgb(184, 184, 184), white);
+}
+
+/* ===== Вступительный блок (текст + 2 фото) ===== */
+.intro {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding: 0 60px;
+}
+.intro-text {
+    flex: 1 1 60%;
+    min-width: 0;
+}
+.tour {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+.description {
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+.ifki {
+    font-size: 22px;
+    line-height: 1.8;
+}
+.intro-images {
+    flex: 0 0 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.intro-figure {
+    text-align: center;
+}
+.intro-figure .img-placeholder, .intro-figure .real-photo {
+    height: 300px;
+}
+.intro-figure figcaption {
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+/* ===== Заголовок программы ===== */
+.program-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 400;
+    margin: 60px 0 30px;
+}
+
+/* ===== Блок программы (дни + фото) ===== */
+.program {
+    display: flex;
+    gap: 30px;
+    padding: 0 60px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+.days-col {
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+}
+.day-card {
+    border: 3px solid #000;
+    border-radius: 10px;
+    padding: 28px 30px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.day-card h3 {
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+.day-card p {
+    font-size: 19px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.images-col {
+    flex: 1 1 50%;
+    flex-direction: column;
+    gap: 25px;
+}
+.images-col .img-placeholder, .images-col .real-photo {
+    height: 430px;
+}
+
+.program-figure {
+    margin: 0 0 25px;
+}
+.program-figure .img-placeholder, .program-figure .real-photo {
+    height: 260px;
+}
+
+/* ===== Кнопки ===== */
+.btn-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 10px;
+}
+.btn {
+    width: 100%;
+    height: 55px;
+    background: #6abf4b;
+    border: 2px solid #000;
+    border-radius: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: box-shadow 0.2s, transform 0.1s;
+}
+.btn:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    transform: translateY(-1px);
+}
+.btn-container a {
+    flex: 1;
+    display: block;
+    text-decoration: none;
+}
+
+/* ===== Футер ===== */
+footer {
+    margin-top: 20px;
+}
+.foot {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    background-color: #FFE799;
+    border-top: 2px solid #000;
+    padding: 25px 40px;
+}
+.foot-left {
+    flex: 1 1 65%;
+}
+.foot-left h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.desc_AdoYA {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.offH {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.foot-right {
+    flex: 1 1 35%;
+    text-align: right;
+}
+.gmail {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+.soc {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.himg {
+    text-decoration: none;
+}
+
+/* =======================================================
+   МОБИЛЬНАЯ АДАПТАЦИЯ (≤ 768px) — раскладка как в Frame 4
+   ======================================================= */
+@media (max-width: 768px) {
+
+    .mobile-only { display: block; }
+    .desktop-only { display: none; }
+
+    /* Хедер в столбик */
+    .head {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        gap: 10px;
+    }
+    .logo-block {
+        gap: 5px;
+    }
+    .logo-img {
+        height: 55px;
+        max-width: 160px;
+    }
+    .BW {
+        font-size: 20px;
+    }
+
+    /* Вступительный блок: фото вверху рядом, текст под ними */
+    .intro {
+        flex-direction: column;
+        padding: 0 15px;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .intro-images {
+        flex-direction: row;
+        flex: none;
+        width: 100%;
+        gap: 12px;
+        order: 1;
+    }
+    .intro-images .intro-figure {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+    /* На мобильном порядок внутри текстового блока другой:
+       описание -> цена -> заголовок "Индивидуальный тур" (как разделитель перед программой) */
+    .intro-text {
+        display: flex;
+        flex-direction: column;
+        order: 2;
+    }
+    .intro-text .tour {
+        order: 3;
+        margin-top: 10px;
+    }
+    .intro-text .description {
+        order: 1;
+    }
+    .intro-text .ifki {
+        order: 2;
+    }
+    .intro-images .img-placeholder {
+        min-height: 160px;
+    }
+    .intro-figure .img-placeholder, .intro-figure .real-photo {
+        height: 160px;
+    }
+    .intro-figure figcaption {
+        font-size: 16px;
+    }
+    .tour {
+        font-size: 23px;
+    }
+    .description, .ifki {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .program-title {
+        font-size: 25px;
+        margin: 35px 0 20px;
+    }
+
+    /* Программа: один столбец, фото внутри потока между днями */
+    .program {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+    .days-col {
+        width: 100%;
+    }
+    .day-card {
+        padding: 24px 18px;
+        margin-bottom: 18px;
+    }
+    .day-card h3 {
+        font-size: 23px;
+        margin-bottom: 18px;
+    }
+    .day-card p {
+        font-size: 18px;
+        line-height: 1.8;
+        text-align: left;
+    }
+    .program-figure {
+        margin-bottom: 18px;
+    }
+    .program-figure .img-placeholder, .program-figure .real-photo {
+        height: 240px;
+    }
+
+    .btn-container {
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 10px;
+    }
+    .btn {
+        font-size: 15px;
+        height: 48px;
+    }
+
+    /* Футер в столбик */
+    .foot {
+        flex-direction: column;
+        padding: 18px;
+        gap: 16px;
+        text-align: center;
+    }
+    .foot-left, .foot-right {
+        flex: none;
+        text-align: center;
+    }
+    .soc {
+        justify-content: center;
+    }
+}
+
+/* =======================================================
+   ПЛАНШЕТЫ / НОУТБУКИ С МАСШТАБОМ ЭКРАНА (769px – 1500px)
+   Сюда попадают обычные ноутбучные разрешения (1366, 1440, 1536...)
+   когда в Windows стоит масштаб 110% / 125% / 150% — потому что
+   масштаб уменьшает эффективную CSS-ширину окна.
+   ======================================================= */
+@media (min-width: 769px) and (max-width: 1500px) {
+    .intro {
+        padding: 0 30px;
+        gap: 25px;
+    }
+    .program {
+        padding: 0 30px;
+        gap: 20px;
+    }
+    .BW {
+        font-size: 26px;
+    }
+
+    /* Колонка с фото в верхнем блоке — была фиксированной (420px),
+       делаем её пропорциональной, чтобы она ужималась вместе с текстом
+       и не выталкивала layout за пределы экрана */
+    .intro-images {
+        flex: 0 0 30%;
+        min-width: 220px;
+    }
+    .intro-figure .img-placeholder, .intro-figure .real-photo {
+        height: 220px;
+    }
+
+    /* Колонка с крупными фото программы — то же самое */
+    .images-col .img-placeholder, .images-col .real-photo {
+        height: 280px;
+    }
+
+    .day-card {
+        padding: 25px 20px;
+    }
+    .day-card p {
+        font-size: 18px;
+    }
+}
